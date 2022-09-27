@@ -1,0 +1,3 @@
+export const TOKEN = '__V3_SIMPLE_ADMIN_DEV_TOKEN__'
+
+export const USER_INFO = '__V3_SIMPLE_ADMIN_DEV_USER_INFO_'
