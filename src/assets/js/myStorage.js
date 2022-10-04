@@ -1,22 +1,22 @@
 const myStorage = {
-  setLocalData: (key, val) => {
-    const obj = {
-      dataType: typeof val,
-      content: val,
-      datetime: new Date().getTime()
-    }
-    window.localStorage.setItem(key, JSON.stringify(obj))
+  set: (key, val) => {
+    // const obj = {
+    //   dataType: typeof val,
+    //   content: val,
+    //   datetime: new Date().getTime()
+    // }
+    window.localStorage.setItem(key, JSON.stringify(val))
   },
-  getLocalData: (key, defval) => {
+  get: (key, defval) => {
     const result = window.localStorage.getItem(key)
     return !result && defval ? defval : !result ? null : JSON.parse(result)
   },
-  removeLocalData: (key) => {
+  remove: (key) => {
     window.localStorage.removeItem(key)
   },
-  clearLocalData: () => {
-    window.localStorage.clear()
-  }
+  // clear: () => {
+  //   window.localStorage.clear()
+  // }
 }
 
 export default myStorage

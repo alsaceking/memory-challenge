@@ -1,13 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import IndexGame from '../views/IndexGame.vue'
+import CommonModel from '@/components/page/commonModel/CommonModel.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'index',
+      component: IndexGame,
+      children: [
+        {
+          path: '/common-model',
+          component: CommonModel
+        },
+        {
+          path: '/challenge-model',
+          component: () => import('@/components/page/challengeModel/ChallengeModel.vue')
+        },
+        {
+          path: '/taste-model',
+          component: () => import('@/components/page/tasteModel/TasteModel.vue')
+        },
+        {
+          path: '/rank-model',
+          component: () => import('@/components/page/rankModel/RankModel.vue')
+        }
+      ]
     }
     // {
     //   path: '/about',
