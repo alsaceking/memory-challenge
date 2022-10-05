@@ -1,6 +1,6 @@
 <template>
   <div class="common-model">
-    <TopTitle title="弱者"></TopTitle>
+    <TopTitle title="join cute food~"></TopTitle>
     <div class="wrap">
       <div class="game-box">
         <div
@@ -48,7 +48,9 @@ const CARD_NUM = 10, // 初始化卡片的数量
   GAP_X = 4,
   GAP_Y = 4,
   CARD_POOL = 71, // 卡片池的数量
-  URL = '/src/assets/images/iconfood/card'
+  BASEURL = '/memory-challenge/iconfood/card'
+// BASEURL =
+//   'https://raw.githubusercontent.com/alsaceking/memory-challenge/main/src/assets/images/iconfood/card'
 
 const params = {
   cardPool: CARD_POOL,
@@ -59,8 +61,12 @@ const params = {
   cardHeight: CARD_HEIGHT,
   gapX: GAP_X,
   gapY: GAP_Y,
-  imgBaseUrl: URL
+  imgBaseUrl: BASEURL
 }
+
+// const getImageUrl = (path) => {
+//   return new URL(path, import.meta.url).href
+// }
 
 // 游戏结束时的操作
 const finishedOpe = () => {
@@ -68,13 +74,13 @@ const finishedOpe = () => {
   let rankList = []
   if (!storageList) {
     rankList.push({
-      name: 'jacob',
-      sec: spendTime.value
+      name: '雨析',
+      sec: 25
     })
   } else if (storageList.length < 5) {
     rankList = storageList.slice()
     rankList.push({
-      name: '❤☆',
+      name: '❤',
       sec: spendTime.value
     })
     rankList.sort((a, b) => a.sec - b.sec)

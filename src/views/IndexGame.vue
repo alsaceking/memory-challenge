@@ -2,6 +2,10 @@
   <div class="wrapper">
     <div class="logo-wrap">
       <img src="../assets/images/logo.png" alt="" />
+      <p class="tipText">
+        沧海横流，物转星移，这尘寰三千年能被记住的又有多少。即便是天尧，也只不过是一瞬的星火。<br />
+        其死若休，其生若浮，其浮生，又何如...
+      </p>
     </div>
     <div class="ope-wrap">
       <div class="button-wrap">
@@ -72,6 +76,14 @@ const rankModel = () => {
     text-align: center;
     img {
       width: 80%;
+    }
+    .tipText {
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 2px;
+      text-indent: 36px;
     }
   }
   .ope-wrap {

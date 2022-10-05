@@ -64,7 +64,7 @@ const CARD_NUM = 12, // 初始化卡片的数量
   CARD_HEIGHT = 17,
   GAP_X = 4,
   GAP_Y = 4,
-  URL = '/src/assets/images/icontaste/card'
+  BASEURL = '/memory-challenge/icontaste/card'
 
 const params = {
   cardNum: CARD_NUM,
@@ -74,14 +74,14 @@ const params = {
   cardHeight: CARD_HEIGHT,
   gapX: GAP_X,
   gapY: GAP_Y,
-  imgBaseUrl: URL
+  imgBaseUrl: BASEURL
 }
 
 // 初始化需要展示的卡片
 const showCardList = ref([])
 for (let i = 0; i < CARD_NUM; i++) {
   showCardList.value.push({
-    url: `${URL}${[i + 1]}.png`,
+    url: `${BASEURL}${[i + 1]}.png`,
     id: `pic${i}`,
     show: false
   })
@@ -127,7 +127,7 @@ const { cardList, check, currentMatchCard } = useCardContainer(
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%);
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 
   .wrap {
     position: relative;
@@ -172,7 +172,7 @@ const { cardList, check, currentMatchCard } = useCardContainer(
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 60%;
+            width: 100%;
             transform: translate3d(-50%, -50%, 0);
           }
 

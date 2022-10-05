@@ -1,6 +1,8 @@
 <template>
   <div class="title">
-    <div class="back-wrap" @click="backIndex"><span>返回</span></div>
+    <div class="back-wrap" @click="backIndex">
+      <img src="/src/assets/images/left.png" alt="" />
+    </div>
     <h1 class="name">{{ props.title }}</h1>
   </div>
 </template>
@@ -34,6 +36,9 @@ const backIndex = () => {
   .back-wrap {
     width: 50px;
     color: black;
+    img {
+      width: 80%;
+    }
   }
   .name {
     flex: 1;

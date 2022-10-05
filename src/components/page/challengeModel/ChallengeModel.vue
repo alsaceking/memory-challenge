@@ -1,6 +1,6 @@
 <template>
   <div class="challenge-model">
-    <TopTitle title="高手"></TopTitle>
+    <TopTitle title="快速完成，会有惊喜。"></TopTitle>
     <div class="wrap">
       <div class="game-box">
         <div
@@ -48,7 +48,7 @@ const CARD_NUM = 20, // 初始化卡片的数量
   GAP_X = 4,
   GAP_Y = 3,
   CARD_POOL = 20, // 卡片池的数量
-  URL = '/src/assets/images/iconavatar/card'
+  BASEURL = '/memory-challenge/iconavatar/card'
 
 const params = {
   cardPool: CARD_POOL,
@@ -59,7 +59,7 @@ const params = {
   cardHeight: CARD_HEIGHT,
   gapX: GAP_X,
   gapY: GAP_Y,
-  imgBaseUrl: URL
+  imgBaseUrl: BASEURL
 }
 
 const finishedOpe = () => {
@@ -68,7 +68,7 @@ const finishedOpe = () => {
   if (!storageList) {
     rankList.push({
       name: '雨析',
-      sec: spendTime.value
+      sec: 108
     })
   } else if (storageList.length < 5) {
     rankList = storageList.slice()

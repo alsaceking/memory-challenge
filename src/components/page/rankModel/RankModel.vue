@@ -36,7 +36,12 @@ const challengeRank = ref([])
 
 onMounted(() => {
   commonRank.value = myStorage.get(COMMON_RANK, [])
-  challengeRank.value = myStorage.get(CHALLENGE_RANK, [])
+  challengeRank.value = myStorage.get(CHALLENGE_RANK, [
+    {
+      name: '雨析',
+      sec: 108
+    }
+  ])
 })
 </script>
 
