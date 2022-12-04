@@ -20,4 +20,6 @@ git commit -m 'deploy'
 
 git push -f git@github.com:alsaceking/memory-challenge.git main:gh-pages
 
+git push -f git@gitee.com:alsaceking/memory-challenge.git main:gh-pages
+
 cd -

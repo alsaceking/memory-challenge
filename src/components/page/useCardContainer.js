@@ -1,7 +1,7 @@
 import { onMounted, ref } from 'vue'
 
 export default function useCardContainer (
-  { cardPool, cardNum, latticeNumX, latticeNumY, cardWidth, cardHeight, gapX, gapY, imgBaseUrl }, finishedOpe, flipOpe
+  { cardSourceList, cardPool, cardNum, latticeNumX, latticeNumY, cardWidth, cardHeight, gapX, gapY, imgBaseUrl }, finishedOpe, flipOpe, resetShowCard
 ) {
 
   onMounted(() => {
@@ -30,10 +30,13 @@ export default function useCardContainer (
   }
 
   // 初始化卡片
+  const cardListIndex = ref(1)
   const cardList = ref([])
 
   const initImage = (cardNumList) => {
+    cardListIndex.value = getRandomNum(cardSourceList)
     cardList.value = []
+
     for (let i = 0; i < cardNum; i++) {
       if (cardPool) {
         cardList.value.push({
@@ -54,7 +57,7 @@ export default function useCardContainer (
         })
       } else {
         cardList.value.push({
-          url: `${imgBaseUrl}${[i + 1]}.png`,
+          url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
           marks: i,
           id: `pic${i}`,
           flip: false,
@@ -62,7 +65,7 @@ export default function useCardContainer (
           show: false
         })
         cardList.value.push({
-          url: `${imgBaseUrl}${[i + 1]}.png`,
+          url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
           marks: i,
           id: `pic${i}copy`,
           flip: false,
@@ -89,6 +92,19 @@ export default function useCardContainer (
     // console.log(locationList.value)
   }
 
+  // 初始化需要展示的卡片
+  const showCardList = ref([])
+  const initShowImage = () => {
+    showCardList.value = []
+    for (let i = 0; i < cardNum; i++) {
+      showCardList.value.push({
+        url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
+        id: `pic${i}`,
+        show: false
+      })
+    }
+  }
+
   // 初始化游戏状态
   const initStatus = () => {
     startTime = -1
@@ -103,7 +119,9 @@ export default function useCardContainer (
     if (cardPool) {
       initImage(getCardNum())
     } else {
+      resetShowCard()
       initImage()
+      initShowImage()
     }
     const locList = locationList.value
     locList.sort(() => {
@@ -186,6 +204,7 @@ export default function useCardContainer (
 
   return {
     cardList,
+    showCardList,
     initStatus,
     check,
     spendTime,

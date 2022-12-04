@@ -64,9 +64,11 @@ const CARD_NUM = 12, // 初始化卡片的数量
   CARD_HEIGHT = 17,
   GAP_X = 4,
   GAP_Y = 4,
+  CARD_POOL = 10,
   BASEURL = '/memory-challenge/icontaste/card'
 
 const params = {
+  cardPool: CARD_POOL,
   cardNum: CARD_NUM,
   latticeNumX: LATTICENUM_X,
   latticeNumY: LATTICENUM_Y,

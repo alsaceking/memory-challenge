@@ -4,22 +4,22 @@
       <img src="../assets/images/logo.png" alt="" />
       <p class="tipText">
         沧海横流，物转星移，这尘寰三千年能被记住的又有多少。即便是天尧，也只不过是一瞬的星火。<br />
-        其死若休，其生若浮，其浮生，又何如...
+        用记忆去揭开尘封已久的神秘画卷，一睹它的风采。
       </p>
     </div>
     <div class="ope-wrap">
       <div class="button-wrap">
-        <div class="ope-buttun" @click="commonModel">普通模式</div>
+        <div class="ope-buttun" @click="commonModel">欣赏模式</div>
       </div>
       <div class="button-wrap">
-        <div class="ope-buttun" @click="challengeModel">挑战模式</div>
+        <div class="ope-buttun" @click="challengeModel">计时模式</div>
       </div>
-      <div class="button-wrap">
+      <!-- <div class="button-wrap">
         <div class="ope-buttun" @click="tasteModel">拼图模式</div>
-      </div>
+      </div> -->
       <div class="button-wrap" style="margin-top: 8px">
         <div
-          class="ope-buttun"
+          class="ope-buttun ope-buttun1"
           style="transform: rotate(5deg); background-color: #e6dfaf"
           @click="rankModel"
         >
@@ -48,12 +48,6 @@ const commonModel = () => {
 const challengeModel = () => {
   router.push({
     path: '/challenge-model'
-  })
-}
-
-const tasteModel = () => {
-  router.push({
-    path: '/taste-model'
   })
 }
 
@@ -94,31 +88,63 @@ const rankModel = () => {
     width: 100%;
     top: 50vh;
     .ope-buttun {
+      position: relative;
       display: inline-block;
       width: 50%;
       padding: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       font-size: 18px;
+      color: #fff;
+      text-shadow: 5px 2px 2px black;
       letter-spacing: 2px;
       text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #fff;
+      letter-spacing: 3px;
       cursor: pointer;
-      border: 3px solid #9db4c6;
-      text-shadow: 5px 2px 2px black;
-      box-shadow: 1px 1px 0px 0px #9db4c6, 2px 2px 0px 0px #9db4c6,
-        3px 3px 0px 0px #9db4c6, 4px 4px 0px 0px #9db4c6,
-        5px 5px 0px 0px #9db4c6;
       background-color: #5a677a;
-      position: relative;
-      user-select: none;
-      touch-action: manipulation;
+      box-shadow: -15px -15px 25px #e0e8f5, 15px 15px 25px #959aa5;
+      // -webkit-box-reflect: below 3px linear-gradient( transparent,rgba(6, 133, 133,0.3));
+      &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: -6px;
+        height: 100%;
+        width: 6px;
+        background: linear-gradient(to right, #808fb7, #c2c6cf);
+        transform: skewY(45deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        right: -3px;
+        height: 6px;
+        width: 100%;
+        background: linear-gradient(to bottom, #808fb7, #c2c6cf);
+        transform: skewX(45deg);
+      }
     }
     .ope-buttun1 {
-      display: inline-block;
-      width: 70%;
-      margin-bottom: 20px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: -6px;
+        height: 100%;
+        width: 6px;
+        background: linear-gradient(to right, #e8f1a7, #c2c6cf);
+        transform: skewY(45deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        right: -3px;
+        height: 6px;
+        width: 100%;
+        background: linear-gradient(to bottom, #e8f1a7, #c2c6cf);
+        transform: skewX(45deg);
+      }
     }
   }
 }
