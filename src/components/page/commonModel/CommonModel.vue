@@ -83,7 +83,7 @@ const CARD_NUM = 8, // 初始化卡片的数量
   CARD_HEIGHT = 20,
   GAP_X = 4,
   GAP_Y = 4,
-  CARD_SOURCE_LIST = 5,
+  CARD_SOURCE_LIST = 14,
   BASEURL = '/memory-challenge/cardsource'
 
 const params = {

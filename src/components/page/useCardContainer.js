@@ -57,7 +57,7 @@ export default function useCardContainer (
         })
       } else {
         cardList.value.push({
-          url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
+          url: `${imgBaseUrl}/beauty${cardListIndex.value}/img${[i + 1]}.png`,
           marks: i,
           id: `pic${i}`,
           flip: false,
@@ -65,7 +65,7 @@ export default function useCardContainer (
           show: false
         })
         cardList.value.push({
-          url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
+          url: `${imgBaseUrl}/beauty${cardListIndex.value}/img${[i + 1]}.png`,
           marks: i,
           id: `pic${i}copy`,
           flip: false,
@@ -98,7 +98,7 @@ export default function useCardContainer (
     showCardList.value = []
     for (let i = 0; i < cardNum; i++) {
       showCardList.value.push({
-        url: `${imgBaseUrl}/beauty${cardListIndex.value}/beauty0${[i + 1]}.png`,
+        url: `${imgBaseUrl}/beauty${cardListIndex.value}/img${[i + 1]}.png`,
         id: `pic${i}`,
         show: false
       })
