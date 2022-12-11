@@ -1,0 +1,1 @@
+const r={set:(e,t)=>{window.localStorage.setItem(e,JSON.stringify(t))},get:(e,t)=>{const o=window.localStorage.getItem(e);return!o&&t?t:o?JSON.parse(o):null},remove:e=>{window.localStorage.removeItem(e)}};export{r as m};
